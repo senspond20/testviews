@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel ="stylesheet" href="common.css">
+<style>
+    section{
+       /* text-align: center;*/
+    }
+    #img-div{
+        width: 500px;
+        height: 300px;
+    }
+    #img-div img{
+        width: 500px;
+        height: 300px;
+        margin-left: 20px;
+    }
+   /* table.tbh{
+        margin-left: auto;
+        margin-right: auto;
+    }*/
+    table.tbh p{
+        font-weight: bold;
+    }
+    #textArea{
+        resize: none;
+        width: 400px;
+        height: 250px;
+        margin-left: 50px;
+    }
+    #insertImg{
+        padding: 5px;
+        background: pink;
+        color: rgb(5, 113, 207);
+        border-style: 3px groove red;
+    }
+    #review{
+        display: inline-block;
+        width: 50%;
+        height: 50px;
+    }
+    #review div{
+        width: 50%;
+        height: 50px;
+        float: left;
+    }
+    #review div p{
+        color: crimson;
+        font-size: 22px;
+    }
+    #reply{
+        display: block;  
+    }
+</style>
+</head>
+<body>
+
+    <section>
+        <div id ="img-div">
+            <img src ="../image/barbara-girls.jpg" id ="">
+        </div>
+
+        <table class ="tbh">
+            <tr>
+                <td><p>업체이름</p></td>
+                <td><input type="text" value ="화장품" style="margin-left: 50px;"></td>
+                <td><button class="btn">사진등록</button></td>
+            </tr>
+            <tr>
+                <td><p>업체소개</p></td>
+                <td><textarea id="textArea">저희 업체는 어쩌구~~</textarea></td>
+            </tr>
+        </table>
+
+        <hr>
+        <div>
+            <div id ="review">
+                <div><p>리뷰</p></div>
+                <div><p>리뷰 평점(5)</p></div>
+            </div>
+
+            <div id ="reply">
+                <table class ="tbh">
+                    <tr>
+                        <td><p>유저명1</p></td>
+                        <td>엉터리 기업입니다.이거</td>
+                    </tr>
+                    <tr>
+                        <td><p>유저명2</p></td>
+                        <td>개짱나요</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div>
+                <button class="btn btn--primary2">
+                    후기작성
+                </button>
+              </div>
+        </div>
+    </section>
+
+
+</body>
+</html>

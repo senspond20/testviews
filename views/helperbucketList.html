@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버킷리스트(헬퍼)</title>
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    .section{
+        position: relative;
+    }
+    .wraper{
+        margin: 0 auto;
+        width: 1200px;
+    }
+
+    /* 사이드바 */
+    .side-bar{
+        float: left;
+        background: linear-gradient(rgba(14, 63, 199, 0.637),
+                                    rgba(14, 63, 199, 0.35)
+                                               );
+        margin-top: 300px;
+        height: 400px;
+        width: 70px;
+        position: fixed;
+        text-align: center;
+        border-radius: 10px;
+    }
+    .side-bar .side-header{
+        padding-top: 10px;
+        color: white;
+    }
+    .side-bar .side-item{
+        background: white;
+        width: 50px;
+        height: 50px;
+        margin: 8px auto;
+        border-radius: 10px;
+    }
+    .side-bar .side-item:hover{
+        cursor: pointer;
+    }
+    .side-bar .side-item p{
+       
+    }
+
+    /* 이너 */
+    .inner{
+        margin: 0 auto;
+        background: whitesmoke;
+        width: 980px;
+        text-align: center;
+        position: relative;
+        
+    }
+    .inner .inner-title{
+        padding: 10px;
+        background: white;
+    }
+    .inner .inner-title p{
+        font-size: 30px;
+        font-weight: bolder;
+        color: #333;
+        text-shadow: rgb(14, 63, 199) 1px 0 100px;
+    }
+
+    /* 이너-컨테이너*/
+    .inner .container{
+        margin:0 auto;
+        border-radius: 10px;
+        border: 1px solid rgb(14, 63, 199);
+        background: whitesmoke;
+        position: relative;
+    }
+    .inner .container .content{
+        background: #fff;
+        width: 400px;
+        height: 220px;
+    
+    }
+    .inner .content__title{
+        background: #fff;
+        width: auto;
+        margin-top: 10px;
+        padding:10px;
+    
+    }
+    .inner .content__title p{
+        font-size: 18px;
+        font-weight: bolder;
+        
+    }
+    .inner .content__detail{
+        background: white; /*rgb(233, 237, 250)*/;
+        clear: both;
+        border-top: 10px solid rgba(0, 0, 0, 0.26);
+        padding: 10px;
+        height: 100px;
+    }
+
+    .inner .content__detail p{
+        color: #333;
+    }
+    .inner .inner__bottom{
+        background: #fff;
+        width:auto;
+        height: 100px;
+        display: block;    
+    }
+    /* 공통 */
+    .clearfix::after{
+        content:"";
+        clear: both;
+        display:block;
+      }
+    .content:hover{
+        cursor: pointer;
+    }
+    .content__left{
+        float: left;
+        margin: 30px 0;
+        margin-left: 50px;
+    }
+    .content__right{
+        float: right;
+        margin: 30px 0;
+        margin-right: 50px;
+        
+    }
+    .content__img, .content__img img{
+        float: left;
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+        background-size: cover;
+       /* background-image: url("../image/test.jpg");*/
+    }
+
+    /* 모달 */
+    #overlay{
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;
+        background: rgba(0,0,0,0.75);
+        z-index: 1;
+    }
+
+    #content-detail-modal{
+        left: 0;
+        top: 0;
+
+        position: fixed;
+
+        z-index: 3;
+
+        width: 900px;
+        height: 500px;
+        border-radius: 10px;
+        background: rgba(245, 244, 244, 0.975);
+    }
+
+    #modal-close-Btn{
+        width: 50px;
+        height: 50px;
+        background: rgb(87, 86, 86);
+        color: #fff;
+        font-size: 30px;
+        border: 1px solid #333;
+        border-radius: 5px;
+        cursor: pointer;
+        float: right;
+        margin-right: 10px;
+    }
+
+    .content .content__center{
+        float: left;
+        margin: 30px 0;
+        margin-left: 50px;
+    }
+  
+
+    .content__img-c, .content__img-c img{
+        float: left;
+        width: 300px;
+        height: 300px;
+        padding: 10px;
+        border-radius: 20px;
+        background-size: cover;
+    
+    }
+    .content .content__title-c{
+        background: #fff;
+        width: auto;
+    
+        margin-top: 10px;
+        padding:10px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .content .content__title-c p{
+        font-size: 18px;
+        font-weight: bolder;
+    }
+    .content .content__detail-c{
+        background: white; /*rgb(233, 237, 250)*/;
+     
+        border-top: 10px solid rgba(0, 0, 0, 0.26);
+        padding: 10px;
+        height: 300px;
+        text-align: center;
+    }
+
+
+</style>
+</head>
+<body>
+    
+    <section class ="section">
+       
+
+        <div class ="wraper">
+        <aside class ="side-bar">
+            <div class ="side-header">카테고리</div>
+            <div class ="side-item"><p>ALL</p></div>
+            <div class ="side-item"><p>여행</p></div>
+            <div class ="side-item"><p>운동</p></div>
+            <div class ="side-item">c4</div>
+            <div class ="side-item">c5</div>
+            <div class ="side-item">c6</div>
+        </aside>
+        <div class="inner">
+            <div class="inner-title"><p>BucketList for Helper</p></div>
+
+            <div class="container clearfix">
+
+                <!-- db에서 -->
+                <!-- <c:foreach >-->
+                <div class ="content content__left">  
+                   
+                    <div class ="content__img"><img src="../image/test.jpg" alt=""></div>
+                    <div class ="content__title"><p>무작정 평택부터 서울까지 걸어가기 -- JUST RUN!</p></div>
+                    <div class ="content__detail"><p>버킷리스트 설명입니다. 혼자서 엄청나게 합니다.계속 합니다.좋아합니다. 굳입니다. 계속 걸어 걸어!</p></div>
+                </div>
+
+                <div class ="content content__right">  
+                    <div class ="content__img"><img src="../image/barbara-girls.jpg" alt=""></div>
+                    <div class ="content__title"><p>KH정보교육원에 있는 모든 여자 번호 따기</p></div>
+                    <div class ="content__detail"><p>막장입니다. 그냥 합니다. do it !</p></div>
+                </div>
+                <!--</c:foreach> -->
+                <div class ="content content__left">  
+                   
+                    <div class ="content__img"><img src="../image/test.jpg" alt=""></div>
+                    <div class ="content__title"><p>무작정 평택부터 서울까지 걸어가기 -- JUST RUN!</p></div>
+                    <div class ="content__detail"><p>버킷리스트 설명입니다. 혼자서 엄청나게 합니다.계속 합니다.좋아합니다. 굳입니다. 계속 걸어 걸어!</p></div>
+                </div>
+
+                <div class ="content content__right">  
+                    <div class ="content__img"><img src="../image/barbara-girls.jpg" alt=""></div>
+                    <div class ="content__title"><p>KH정보교육원에 있는 모든 여자 번호 따기</p></div>
+                    <div class ="content__detail"><p>막장입니다. 그냥 합니다. do it !</p></div>
+                </div>
+
+                <div class ="content content__left">  
+                   
+                    <div class ="content__img"><img src="../image/test.jpg" alt=""></div>
+                    <div class ="content__title"><p>무작정 평택부터 서울까지 걸어가기 -- JUST RUN!</p></div>
+                    <div class ="content__detail"><p>버킷리스트 설명입니다. 혼자서 엄청나게 합니다.계속 합니다.좋아합니다. 굳입니다. 계속 걸어 걸어!</p></div>
+                </div>
+
+                <div class ="content content__right">  
+                    <div class ="content__img"><img src="../image/barbara-girls.jpg" alt=""></div>
+                    <div class ="content__title"><p>KH정보교육원에 있는 모든 여자 번호 따기</p></div>
+                    <div class ="content__detail"><p>막장입니다. 그냥 합니다. do it !</p></div>
+                </div>
+
+                <div class ="content content__left">  
+                   
+                    <div class ="content__img"><img src="../image/test.jpg" alt=""></div>
+                    <div class ="content__title"><p>무작정 평택부터 서울까지 걸어가기 -- JUST RUN!</p></div>
+                    <div class ="content__detail"><p>버킷리스트 설명입니다. 혼자서 엄청나게 합니다.계속 합니다.좋아합니다. 굳입니다. 계속 걸어 걸어!</p></div>
+                </div>
+
+                <div class ="content content__right">  
+                    <div class ="content__img"><img src="../image/barbara-girls.jpg" alt=""></div>
+                    <div class ="content__title"><p>KH정보교육원에 있는 모든 여자 번호 따기</p></div>
+                    <div class ="content__detail"><p>막장입니다. 그냥 합니다. do it !</p></div>
+                </div>
+              
+
+                <!-- end container -->
+            </div>
+             <footer class="inner__bottom">
+
+             </footer>
+        </div>
+    </div>
+    <script>
+
+        $(function(){
+            $('#overlay').hide();
+            $('#content-detail-modal').hide();
+         });
+
+        /* 가운데 정렬 */
+        jQuery.fn.center = function () { 
+            this.css('top', Math.max(0,(($(window).height()-$(this).outerHeight())/2) )+'px'); 
+         // this.css('top', Math.max(0,(($(window).height()-$(this).outerHeight())/2) + $(window).scrollTop())+'px'); 
+            this.css('left', Math.max(0,(($(window).width()-$(this).outerWidth())/2) + $(window).scrollLeft())+'px'); 
+        return this; }
+
+        $('.content').on('click',function(){
+           $('#overlay').fadeIn(500);
+           $('#content-detail-modal').center().fadeIn(300);
+        });
+
+        function test(){  
+            $('#overlay').fadeOut(500);
+            $('#content-detail-modal').fadeOut(300);
+        }
+    </script>
+
+    <!-- 버킷리스트 상세 모달창-->
+
+    <!-- 오버레이div-->
+    <div id="overlay"></div>
+
+    <div id="content-detail-modal">
+
+        <div>
+            <button id="modal-close-Btn" onclick="test();">X</button>
+
+            <div class ="content content__center">  
+                <div class ="content__title-c"><p>무작정 평택부터 서울까지 걸어가기 -- JUST RUN!</p></div>
+
+                <div class ="content__img-c"><img src="../image/test.jpg" alt=""></div>
+               
+                <div class ="content__detail-c"><p>버킷리스트 설명입니다. 혼자서 엄청나게 합니다.계속 합니다.좋아합니다. 굳입니다. 계속 걸어 걸어!</p></div>
+           
+            </div>
+        </div>
+    </div>
+       
+    </section>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QnA</title>
+<style>
+    #title{
+        font-size: 24px;
+        font-weight: bolder;
+    }
+    #board-area{
+        align-items: center;
+    }
+    table.board {
+        border-collapse: collapse;
+        text-align: center;
+        line-height: 1.5;
+        width: 900px;
+        /* 가운데 정렬 */
+        margin:auto; 
+    }
+    table.board thead th {
+        padding: 10px;
+        font-weight: bold;
+        vertical-align: top;
+        color: black; /*#369*/
+        border-bottom: 8px solid #036;
+    }
+    table.board tbody{
+        background: whitesmoke;
+    }
+    table.board tbody th {
+        width: 150px;
+        padding: 10px;
+        font-weight: bold;
+        vertical-align: top;
+        border-bottom: 1px solid #ccc;
+        background: #f3f6f7;
+    }
+    table.board td {
+        width: 350px;
+        padding: 10px;
+        vertical-align: top;
+        border-bottom: 1px solid #ccc;
+    }
+    
+    #board-paging{
+        margin-top: 20px;   
+    }
+    #board-paging div{
+        display: inline-block;  
+    }
+    #board-filter{
+    }
+    #searchBtn{
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 10px;
+        background: whitesmoke;
+      
+        color: #036;
+    }
+    #prev, #next{
+        padding: 5px;
+        background:#036;
+        border-radius: 5px;
+        color: white;
+    }
+    .sBtn{
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        background:whitesmoke;
+        border-radius: 5px;
+    }
+
+    section{
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    
+    <section>
+        <p id ="title">포인트 내역</p>
+    
+
+        <!-- 게시판 목록 영역-->
+        <div id ="board-area">
+           
+            <table class="board">
+                <thead>
+                <tr>
+                    <th scope="cols" >번호</th>
+                    <th scope="cols" >말머리</th>
+                    <th scope="cols" >금액</th>
+                    <th scope="cols" >이름</th>
+                    <th scope="cols" >날짜</th>
+                </tr>
+                </thead>
+                <tbody>
+        
+                <tr>
+                    <td scope="row">3</td>
+                    <td>사용</td>
+                    <td>2000 포인트 사용</td>
+                    <td>KH COMPANY</td>
+                    <td>2020.05.14</td>
+                </tr>
+                <tr>
+                    <td scope="row">2</td>
+                    <td>충전</td>
+                    <td>3000 포인트 충전</td>
+                    <td>KH COMPANY</td>
+                    <td>2020.05.08</td>
+                </tr>
+                </tbody>
+            </table>
+        
+
+            <!-- 게시판 페이징 영역-->
+            <div id="board-paging">
+                <div><button id ="prev">이전</button></div> 
+
+                <div><button class ="sBtn">1</button></div>
+                <div><button class ="sBtn">2</button></div>
+                <div><button class ="sBtn">3</button></div>
+
+                <div><button id= "next">다음</button></div>
+            </div>
+
+            <!-- 게시판 필터 영역-->
+            <div id="board-filter">
+                <div>
+                    <select>
+                        <option>제목</option>
+                        <option>아이디</option>
+                        <option>제목</option>
+                    </select>
+                    <input type="text" placeholder="기업검색">
+                    <button id ="searchBtn">검색</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    
+</body>
+</html>

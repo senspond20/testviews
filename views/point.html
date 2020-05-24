@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포인트 충전</title>
+    <link rel="stylesheet" href="common.css">
+<style>
+    section{
+        text-align: center;
+    }
+
+    #title{
+        font-size: 24px;
+    }
+
+    #having-point{
+        float: right;
+        margin-right: 400px;
+    }
+    .content-m{
+        width: 600px;
+        background: white linear-gradient(rgba(0,0,0,0.07),
+                                 rgba(0,0,0,0.025));
+        color: plum;
+        border-radius: 50px;
+        margin: auto;
+    }
+    .content-m div{
+        margin-top: 50px;
+        padding: 20px;
+        width: fit-content; 
+        font-size: 18px;
+        border-radius: 45px;
+        
+    }
+    .content-m div p{
+        text-align: center;
+    }
+    table.point {
+        border-collapse: collapse;
+        text-align: center;
+        margin-top: 50px;
+        line-height: 1.5;
+        width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+       
+    }
+    table.point thead th {
+        padding: 10px;
+        font-weight: bold;
+        vertical-align: top;
+        color:  plum; 
+        border-bottom: 8px solid plum;
+    }
+    table.point tbody{
+        background: white;
+    }
+    table.point tbody th {
+        width: 150px;
+        padding: 10px;
+        font-weight: bold;
+        vertical-align: top;
+        border-bottom: 1px solid #ccc;
+        background: #f3f6f7;
+    }
+    table.point td {
+        width: 350px;
+        padding: 10px;
+        vertical-align: top;
+        border-bottom: 1px solid #ccc;
+    }
+</style>
+</head>
+<body>
+    <section>
+
+        <div id = "outer">
+            <div>
+            <p id ="title">포인트 충전</p>
+            </div>
+            
+            <div id ="having-point">
+                <label>보유 포인트</label>
+                <input type ="text" value ="300000">
+            </div>
+
+            <div class ="content-m">
+                <div><p>포인트 충전 안내</p></div>
+            </div>
+
+            <table class="point">
+                <thead>
+                    <tr>
+                        <th scope="cols">충전 포인트</td>
+                        <th scope="cols">보너스 포인트</td>
+                        <th scope="cols">금액</td>
+                    </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>11,000 point</td>
+                    <td>+11,000 point</td>
+                    <td>11,000원</td>
+                </tr>
+                <tr>
+                    <td>22,000 point</td>
+                    <td>+22,000 point</td>
+                    <td>22,000원</td>
+                </tr>
+                <tr>
+                    <td>33,000 point</td>
+                    <td>+33,000 point</td>
+                    <td>33,000원</td>
+                </tr>
+                <tr>
+                    <td>33,000 point</td>
+                    <td>+33,000 point</td>
+                    <td>33,000원</td>
+                </tr>
+            </tbody>
+            </table>
+
+            <div>
+
+            <form>
+                <div class ="content-m">
+                <div><p>결제수단</p></div>
+                </div>
+
+                <div>
+                <label><input type="radio" name="pay" value="card" checked> 신용/체크 카드</label>
+                <label><input type="radio" name="pay" value="phone"> 휴대폰</label>
+                <br>
+                </div>
+                <button type="submit" class ="btn btn--primary2">결제하기</button>
+            </form>
+            </div>
+
+    </div>
+    </section>
+    <script>
+        function test(){
+            alert('do');
+        }
+    </script>
+
+</body>
+</html>

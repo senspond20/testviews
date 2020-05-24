@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helper Viewer</title>
+    <link rel ="stylesheet" href="common.css">
+<style>
+
+    .section{   }
+
+    .inner{
+        width: 980px;
+        height: auto;
+        margin: 0 auto;
+        background: whitesmoke;
+
+    }
+    .inner__header{
+        width: 768px;
+        height: 50px;
+        background: #fff;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .inner__header p{
+        font-size: 22px;
+        font-weight: bolder;
+    }
+    .inner__content{
+        width: 768px;
+        height: 700px;
+        background: #fff;
+        margin: 0 auto;
+    }
+    .inner__content .c-img, .inner__content .c-img img{
+        width: 568px;
+        height: 300px;
+        background: pink;
+        margin: 0 auto;
+        background-size: cover;
+    }
+ 
+
+    .inner__content .c-cont{
+        width: 568px;
+        height: 300px;
+        background: #fff;
+        margin: 0 auto;
+    }
+
+
+    table.tbh p{
+        font-weight: bold;
+    }
+    #textArea{
+        resize: none;
+        width: 400px;
+        height: 250px;
+        margin-left: 50px;
+        border-radius: 5px;
+        border: 1px solid rbga(0,0,0,0.045);
+    }
+    #insertImg{
+        padding: 5px;
+        background: pink;
+        color: rgb(5, 113, 207);
+        border-style: 3px groove red;
+    }
+
+    .inner__review{
+        float: left;
+        margin: 0 auto;
+    }
+    .inner__review .review{
+        width: 600px;
+        height: 50px;
+        margin: 0 auto;
+    }
+
+    .inner__review .review div{
+        width: 140px;
+        height: auto;
+        float: right;
+        text-align: center;
+    }
+
+    .inner__review .review div p{
+        color: crimson;
+        font-size: 18px;
+    }
+    .reply{
+        content: "";
+        clear: both;
+        display: block;  
+    }
+
+    .clearfix::after{
+        content: "";
+        clear: both;
+        display: block;  
+    }
+
+    .reply .reply__title{
+        font-size: 20px;
+        font-weight: bolder;
+        margin-bottom: 10px;
+    }
+    .reply .reply__area{
+        width: 600px;
+        height: auto;
+        background: rgba(0, 0, 0, 0.011);
+        float: left;
+    }
+
+    .reply .reply__area p{
+        font-size: 17px;
+    }
+
+    .reply__area .r-user{
+        height: 30px;
+        background:rgba(0, 0, 0, 0.071);
+        padding: 10px;
+        border-right: 3px dotted pink;
+        float: left;
+    }
+    .reply__area .r-user p{
+        font-weight: bolder;
+    }
+    .reply__area .r-content{
+        height: 30px;
+     
+        padding: 10px;
+        margin-left: 20px;
+        float: left;
+    }
+    .reply__area .r-score{
+        height: 30px;
+        padding: 10px;
+        background:#fff;
+        float: right;
+    }
+    .reply__area .r-score p{
+        color:purple;
+    }
+
+    table.tbh{
+
+    }
+    
+</style>
+</head>
+<body>
+
+    <section class="section">
+       
+        <div class="inner">
+            <div class="inner__header">
+                <p>Helper Viewer</p>
+            </div>
+
+            <div class="inner__content">
+                <div class="c-img">
+                    <img src ="../image/barbara-girls.jpg" id ="">
+                </div>
+                <div class="c-cont">
+
+                    <br>
+                    <table class ="tbh">
+                        <tr>
+                            <td><p class="t-title">업체이름</p></td>
+                            <td><input type="text" value ="화장품" style="margin-left: 50px; " readonly></td>
+                        </tr>
+                        <tr>
+                            <td><p class="t-title">업체소개</p></td>
+                            <td><textarea id="textArea" readonly>저희 업체는 의상디자인 전문업체입니다.
+                                세상에 단 하나뿐인 옷을 만들고 싶으신분? 저희가 도와드립니다. 어쩌구~~</textarea></td>
+                        </tr>
+                    </table>
+                    <br>
+                
+                    <div class ="inner__review">
+                       
+                        <div class ="review">
+                            <div>
+                                <button class="btn btn--primary2">
+                                    후기작성
+                                </button>
+                                </div>
+                            <div><p>★★★☆☆</p></div>
+                            <div><p>리뷰 평점(3)</p></div>
+                            
+                        </div>
+                        <hr>
+                     
+                    <br>
+
+            
+
+                        <div class ="reply">
+                            <div class ="reply__title"><p>Review</p></div>
+
+                            <div class ="reply__area">
+                               <!-- start -->
+                                <div class ="r-user">
+                                    <p>유저명1</p>
+                                </div>
+
+                                <div class ="r-content">
+                                    <p>쓰레기 기업입니다.</p>
+                                </div>
+
+                                <div class ="r-score">
+                                    <p>★☆☆☆☆</p>
+                                </div>
+                                 <!-- end -->                          
+                            </div>
+
+                            <div class ="reply__area">
+                                <!-- start -->
+                                 <div class ="r-user">
+                                     <p>유저명1</p>
+                                 </div>
+ 
+                                 <div class ="r-content">
+                                     <p>쓰레기 기업입니다.</p>
+                                 </div>
+ 
+                                 <div class ="r-score">
+                                     <p>★☆☆☆☆</p>
+                                 </div>
+                                  <!-- end -->                          
+                             </div>
+                        </div>
+            
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+</body>
+</html>

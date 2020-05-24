@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포인트 충전</title>
+    <link rel="stylesheet" href="common.css">
+<style>
+    .inner{
+        width: 980px;
+        height: auto;
+        margin: 0 auto;
+        background: white;
+        background-image: url("../image/fl.jpg");
+        background-size: cover;
+    }
+    .inner .inner__header{
+       /* background: #fff;*/
+        text-align: center;
+        height: 70px;
+    }
+    .inner .inner__header p{
+        font-size: 24px;
+        font-weight: bolder;
+        padding: 15px;
+    }
+    .inner .inner__content{
+        width: 768px;
+        height: auto;
+        margin: 0 auto;
+        background: #fff; 
+    
+    }
+    .inner .banner{
+        width: 150px;
+        height: 30px;
+       
+        background: #fff;
+        
+       /* background: rgb(245, 209, 236);*/
+        margin: 0 auto;
+       /* border-radius: 30px;*/
+        text-align: center;
+    }
+    .inner .banner p{
+        font-weight: 600;
+        font-size: 18px;
+    }
+    .inner .point-img{
+        text-align: center;
+        background-size: cover;
+        background: #e97575;
+        padding: 5px;
+    }
+    .inner .point-img img{     
+        width: 600px;
+        height: 150px;
+        background-size: cover;
+    }
+    /* Table */
+    table.point {
+        border-collapse: collapse;
+        text-align: center;
+        margin-top: 50px;
+        line-height: 1.5;
+        width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+       
+    }
+    table.point thead th {
+        padding: 10px;
+        font-weight: bold;
+        vertical-align: top;
+        color:  plum; 
+        border-bottom: 4px solid plum;
+    }
+    table.point tbody{
+        background: white;
+    }
+    table.point tbody th {
+        width: 150px;
+        padding: 10px;
+        font-weight: bold;
+        vertical-align: top;
+        border-bottom: 1px solid #ccc;
+        background: #f3f6f7;
+    }
+    table.point td {
+        width: 350px;
+        padding: 10px;
+        vertical-align: top;
+        border-bottom: 1px solid #ccc;
+    }
+    .p-before{
+        text-decoration: line-through;
+    }
+    .p-after{
+        color: red;
+    }
+    
+    #payfrom-outer{
+        margin: 0 auto;
+        background: #fff;
+        width: 600px;
+       
+    }
+    #payform{
+        text-align: center;
+        display: inline-block;
+    }
+    #payform-img{
+        float: left;
+        background: #fff;
+        height: 180px;
+    }
+    #payform-img img{
+        padding: 10px;
+        width: 240px;
+        height: 130px;
+        background-size: cover;
+        border-right: 4px solid plum;
+    }
+    #payform-select{
+        float: left;
+        
+    }
+    #payform .payform-radio {
+        clear: both;
+        display: block;
+        width: 300px;
+        height: 50px;
+    }
+</style>
+</head>
+<body>
+    <section class="section">
+        <div class="inner">
+
+            <div class="inner__header">
+                <p>Point 충전</p>
+            </div>
+            <div class="inner__content">
+
+               <!-- <br><br>
+                 <div class="banner">
+                    <p>포인트 충전</p>
+                </div>
+                <br> -->
+                <div class= "point-img">
+                    <img src="../image/sale2.png" alt=" " />
+                </div>
+                <table class="point">
+                    <thead>
+                        <tr>
+                            <th scope="cols">충전 포인트</td>
+                            <th scope="cols">보너스 포인트</td>
+                            <th scope="cols">금액</td>
+                        </tr>
+                </thead>
+    
+                <tbody>
+                    <tr>
+                        <td>11,000 point</td>
+                        <td>+11,000 point</td>
+                        <td><p class ="p-before">11,000원</p>
+                            <p class ="p-after">7,000원</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>22,000 point</td>
+                        <td>+22,000 point</td>
+                        <td><p class ="p-before">22,000원</p>
+                            <p class ="p-after">11,000원</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>33,000 point</td>
+                        <td>+33,000 point</td>
+                        <td><p class ="p-before">33,000원</p>
+                            <p class ="p-after">27,000원</p></td>
+                    </tr>
+                    <tr>
+                        <td>44,000 point</td>
+                        <td>+44,000 point</td>
+                        <td><p class ="p-before">44,000원</p>
+                            <p class ="p-after">37,000원</p>
+                        </td>
+                    </tr>
+                </tbody>
+                </table>
+               
+                
+                <br><br>
+                <div class ="content-m banner">
+                    <p>결제수단</p>
+                </div>
+                <br><br>
+            
+                <div id="payfrom-outer">
+                    
+                    <form id ="payform">
+                        <div id ="payform-img">
+                            <!-- <img src ="../image/credit.png" alt=""> -->
+                            <img src ="../image/phone.png" alt="">
+                        </div>
+
+                        <div id ="payform-select">
+                            <div class ="payform-radio"><input type="radio" name="pay" value="card" checked><p>신용/체크 카드</p></div>
+                            <div class ="payform-radio"><input type="radio" name="pay" value="phone"><p>휴대폰</p></div>  
+                        </div>
+                        <div id ="payform-bottom">
+                            <button type="submit" class ="btn btn--primary2">결제하기</button>
+                        </div> 
+                    </form>
+
+                 </div>
+
+            </div>
+
+            <br>
+            <br>
+            <br>
+        </div>
+       
+    </section>
+    <script>
+        function setDisplay(){
+            if($('input:radio[id=aaa]').is(':checked')){
+                $('#divId').hide();
+            }else{
+                $('#divId').show();
+            }
+        }
+
+    </script>
+
+</body>
+</html>
